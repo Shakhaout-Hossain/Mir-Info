@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90417956003",
+    "project_id": "mir-info",
+    "storage_bucket": "mir-info.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90417956003:android:e6680b059c05573ca7ab16",
+        "android_client_info": {
+          "package_name": "com.example.mirinfo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFXmifwTC0hhQl13t9WtOso8EidXqjOpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
