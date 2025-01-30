@@ -13,10 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.mirinfo.viewModel.AuthViewModel
+import com.example.mirinfo.viewModel.FormViewModel
+
 
 @Composable
-fun HomePageMenu(authViewModel: AuthViewModel) {
+fun HomePageMenu(authViewModel: AuthViewModel, navController: NavController) {
     Box {
         Column(
             modifier = Modifier
@@ -30,16 +33,16 @@ fun HomePageMenu(authViewModel: AuthViewModel) {
                 horizontalArrangement = Arrangement.spacedBy(16.dp) // Space between columns
             ) {
                 Button(
-                    onClick = { /* Handle Button 1 Click */ },
+                    onClick = { /* Handle Button 1 Click */ navController.navigate("book_list") },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text(text = "Button 1")
+                    Text(text = "Book List")
                 }
                 Button(
-                    onClick = { /* Handle Button 2 Click */ },
+                    onClick = {  navController.navigate("tabs") },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text(text = "Button 2")
+                    Text(text = "Tab View")
                 }
             }
 
@@ -55,27 +58,14 @@ fun HomePageMenu(authViewModel: AuthViewModel) {
                     Text(text = "Button 3")
                 }
                 Button(
-                    onClick = { /* Handle Button 4 Click */ },
+                    onClick = { /* Handle Button 4 Click */ navController.navigate("form") },
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text(text = "Button 4")
+                    Text(text = "From")
                 }
             }
 
             // Third Row
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(16.dp) // Space between columns
-            ) {
-                Button(
-                    onClick = { authViewModel.signout() },
-                    modifier = Modifier.weight(1f)
-                ) {
-                    Text(text = "Log Out")
-                }
-            }
-
-            // Fourth Row
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(16.dp) // Space between columns

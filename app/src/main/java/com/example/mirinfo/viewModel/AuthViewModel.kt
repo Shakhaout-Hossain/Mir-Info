@@ -7,7 +7,7 @@ import com.example.mirinfo.data.repositories.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
 
 
-class AuthViewModel(private val authRepository: AuthRepository): ViewModel() {
+class AuthViewModel(/*private val authRepository: AuthRepository*/): ViewModel() {
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val _authState = MutableLiveData<AuthState>()
     val authState: LiveData<AuthState> = _authState
@@ -69,7 +69,7 @@ class AuthViewModel(private val authRepository: AuthRepository): ViewModel() {
         _authState.value = AuthState.Unauthenticated
     }
 
-//    fun sendEmailVerification(onSuccess: () -> Unit, onFailure: (String) -> Unit) {
+//    fun sendEmailVerification(onSuccess: () -> Unit, onFailure: (String) -> Unit) {0
 //        authRepository.sendVerificationEmail(onSuccess, onFailure)
 //    }
 //

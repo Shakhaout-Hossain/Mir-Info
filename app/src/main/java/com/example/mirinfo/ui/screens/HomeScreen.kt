@@ -26,7 +26,7 @@ fun HomeScreen(modifier: Modifier = Modifier, navController: NavController, auth
     Column {
         // Other UI elements for the home screen
         ImageSlideshow()  // Use the slideshow composable here
-        HomePageMenu(authViewModel)
+        HomePageMenu(authViewModel, navController )
 
     }
 

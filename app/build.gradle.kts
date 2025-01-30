@@ -76,6 +76,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.google.firebase:firebase-auth:23.1.0")
     implementation ("androidx.compose.runtime:runtime-livedata:1.7.6")
+    implementation ("com.google.android.material:material:1.9.0")
 
 
     testImplementation("junit:junit:4.13.2")

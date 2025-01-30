@@ -1,9 +1,5 @@
-package com.example.mirinfo.ui.screens
+package com.example.mirinfo.ui.screens.splash
 
-import android.content.Intent
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
@@ -19,39 +15,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.example.mirinfo.R
-import com.example.mirinfo.ui.main.MainActivity
-import com.example.mirinfo.ui.theme.MirInfoTheme
 import kotlinx.coroutines.delay
 
-class SplashScreen : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MirInfoTheme {
-                SplashScreen {
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
-                }
-            }
-        }
-    }
-}
-
 @Composable
-fun SplashScreen(onTimeout: () -> Unit) {
+fun SplashScreen(/*onTimeout: () -> Unit,*/ navController: NavController) {
 
     var isScaledUp by remember { mutableStateOf(false) }
     val scale by animateFloatAsState(
         targetValue = if (isScaledUp) 2.5f else 1f, // Scale from 1x to 1.5x
-        animationSpec = tween(1500)
+        animationSpec = tween(1000), label = ""
     )
 
     LaunchedEffect(Unit) {
         isScaledUp = true
-        delay(5000)
-        onTimeout()
+        delay(3000)
+        //onTimeout()
+        navController.navigate("login")
     }
 
     Box(
@@ -65,12 +46,4 @@ fun SplashScreen(onTimeout: () -> Unit) {
         )
     }
 
-}
-
-@Preview(showBackground = true)
-@Composable
-fun SplashScreenPreview() {
-    MirInfoTheme {
-        SplashScreen()
-    }
 }

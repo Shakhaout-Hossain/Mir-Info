@@ -1,5 +1,4 @@
 package com.example.mirinfo.data.models
-
 data class UserInfo (
     val uid: String = "",          // Firebase User ID
     val name: String? = null,
